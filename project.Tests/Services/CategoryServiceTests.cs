@@ -227,12 +227,12 @@ namespace project.Tests.Services
         {
             // Arrange
             SetupMocks();
-            categoryRepositoryMock.Setup(r => r.GetCategoryById(99)).Returns((Category)null);
+            categoryRepositoryMock.Setup(r => r.GetCategoryById(1000)).Returns((Category)null);
 
             var service = new CategoryService(categoryRepo, mapper);
 
             // Act
-            var result = service.DeleteCategory(99);
+            var result = service.DeleteCategory(1000);
 
             // Assert
             Assert.False(result);
